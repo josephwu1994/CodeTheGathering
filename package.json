@@ -1,0 +1,22 @@
+{
+  "name": "code-the-gathering",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/server.js"
+  },
+  "dependencies": {
+    "debug": "~2.6.9",
+    "http-errors": "~1.6.2"
+  },
+  "devDependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.2",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.16.3",
+    "mongodb": "^3.0.5",
+    "mongoose": "^5.0.12",
+    "nodemon": "^1.17.2",
+    "react": "^16.2.0"
+  }
+}
