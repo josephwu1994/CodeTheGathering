@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Table from './Table.jsx';
-import PostCreator from './PostCreator';
+import PostCreator from './PostCreator.jsx';
 import * as actions from '../actions/actions';
 
 const mapStateToProps = store => ({

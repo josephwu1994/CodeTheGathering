@@ -6,8 +6,8 @@ const entry = [
 ];
 
 const output = {
-  path: path.resolve(__dirname, 'dist'),
-  publicPath: '/dist/',
+  path: path.resolve(__dirname, 'public'),
+  publicPath: '/public/',
   filename: 'bundle.js',
 };
 
