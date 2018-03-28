@@ -1,36 +1,40 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-
-var app = express();
-
+const app = express();
+const mongoose = require('mongoose');
+const userController = require('./Controllers/userController');
+const URI = 'mongodb://joseph:codesmith@ds221148.mlab.com:21148/codethegathering';
+mongoose.connect(URI);
 // view engine setup
-app.use(bodyParser.json());
+app.use(express.static('public'));
+
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.set('Content-Type', 'application/json');
 
-app.use('/', );
-app.use('/users', );
 
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  next(createError(404));
+app.get('/', (req, res) => {
+	res.sendFile(path.join(__dirname, './../views/login.html'));
 });
 
-// error handler
-app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
+app.get('/signup', (req, res) => {
+	res.sendFile(path.join(__dirname, './../views/signup.html'));
+});
 
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error');
+app.get('/Cohort20', (req, res) => {
+	res.sendFile(path.join(__dirname, './../views/index.html'));
+});
+
+app.post('/login', userController.verify, (req, res) => {
+	res.redirect('/Cohort20');
+});
+
+app.post('/signup', userController.createUser, (req, res) => {
+	res.redirect('/');
 });
 
 app.listen(3000);

@@ -1,0 +1,26 @@
+body {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	font-family: 'ubuntu Light', 'Century Gothic', sans-serif;
+	font: 16px "Lucida Grande", Helvetica, Arial, sans-serif;
+	background-color: rgba(0, 132, 255, 0.692);
+}
+
+.container {
+	padding-top: 10px;
+}
+
+.Box {
+	background-color: #fff;
+	max-width: 1000px;
+	margin: 0 auto;
+	padding: 10px;
+	box-shadow: 10px 15px 39px black;
+	border-radius: 5px;
+}
+
+
+a {
+  color: #00B7FF;
+}
