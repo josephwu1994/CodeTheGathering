@@ -3,9 +3,9 @@ import Comment from './Comment.jsx'
 
 const Post = (props) => {
 	let comment = '';
-	let comments = [];
+	let commentsArr = [];
 	for(let i = 0 ; i < props.post.commentList.length; i++) {
-		comments.push(<Comment comment={props.post.commentList[i]} />);
+		commentsArr.push(<Comment key={i} comment={props.post.commentList[i]} />);
 	}
 
 	return (
@@ -18,7 +18,7 @@ const Post = (props) => {
 				<input type="text" onChange={(e)=>{comment = e.target.value}} />
 				<button type="button" onClick={()=> {props.addComment(props.post.id, comment)}} ></button>
 			</div>
-			{comments}
+			{commentsArr}
 		</div>
 	);
 }

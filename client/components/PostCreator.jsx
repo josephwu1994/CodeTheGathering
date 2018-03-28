@@ -1,12 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-const PostCreator = props => {
+const PostCreator = (props) => {
 	let newPost = '';
 
 	return (
 		<div className="PCreator">
-			<label>Something New: </label>
-			<input type="text" onChange={(e) => {newPost = e.target.value}} />
+			<textarea type="text" placeholder="What's New?.." onChange={(e) => {newPost = e.target.value}} />
 			<button type="button" onClick={()=>{props.addPost(newPost)}} >Post</button>
 		</div>
 	);
