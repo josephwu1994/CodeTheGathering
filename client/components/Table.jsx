@@ -8,7 +8,6 @@ const Table = (props) => {
 	}
 	return (
 		<div className="Table">
-			<h1 id="header">Posts</h1>
 			{postsArr}
 		</div>
 	);

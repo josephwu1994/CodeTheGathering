@@ -25,7 +25,7 @@ userController.createUser = (req, res, next) => {
 }
 
 userController.verify = (req, res, next) => {
-	User.findOne({ fName: req.body.fName, lName: req.body.lName}, (err, info) => {
+	User.findOne({ fName: req.body.fName.toLowerCase(), lName: req.body.lName.toLowerCase()}, (err, info) => {
 		if (err) throw err;
 		if (req.body.pin === info.pin){
 			next();

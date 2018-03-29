@@ -1,12 +1,11 @@
 import React from 'react';
+import Linkify from 'linkifyjs/react';
 
 const Comment = (props) => {
 
 	return (
 		<div className="commentLists">
-			<ul>
-				<li className="comment">{props.comment}</li>
-			</ul>
+			<Linkify tagName="p" className="comment">{props.comment}</Linkify>
 		</div>
 	)
 }

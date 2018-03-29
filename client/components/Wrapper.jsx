@@ -24,8 +24,10 @@ class Wrapper extends Component {
 				<div className="Box">
 					<h1 id="header"> Code Feeds </h1>
 					<PostCreator addPost={this.props.addPost} />
+					<h1 id="header">Posts</h1>
 					<Table addComment={this.props.addComment} postList={this.props.postList} />
 				</div>
+				
 			</div>
 		)
 	}

@@ -12,7 +12,9 @@ const postsReducer = (state = initialState, action) => {
 	switch (action.type) {
 		case types.ADD_POST:
 			// Add a post to the existing table
-
+		if(action.content.trim().length === 0){
+			return {...state};
+		}
 			const newPost = {
 				id: state.lastPostId,
 				content: action.content,
@@ -30,6 +32,9 @@ const postsReducer = (state = initialState, action) => {
 			};
 		case types.ADD_COMMENT:
 			postList = state.postList.slice();
+			if(action.comment.trim().length === 0) {
+				return {...state};
+			}
 
 			return {
 				...state,
